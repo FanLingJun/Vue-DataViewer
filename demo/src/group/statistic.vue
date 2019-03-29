@@ -1,23 +1,23 @@
 <template>
   <div class="layout">
     <Layout>
-      <Header :style="{position: 'fixed', width: '100%'}">
-        <Menu mode="horizontal" theme="dark" active-name="1">
+      <Header :style="{width: '100%'}">
+        <Menu mode="horizontal" theme="dark" active-name="1" @on-select="SelectItem">
           <div class="layout-logo"></div>
           <div class="layout-nav">
-            <MenuItem name="1">
+            <MenuItem name="test">
               <Icon type="ios-navigate"></Icon>
               Item 1
             </MenuItem>
-            <MenuItem name="2">
+            <MenuItem name="itemTwo">
               <Icon type="ios-keypad"></Icon>
               Item 2
             </MenuItem>
-            <MenuItem name="3">
+            <MenuItem name="itemThree">
               <Icon type="ios-analytics"></Icon>
               Item 3
             </MenuItem>
-            <MenuItem name="4">
+            <MenuItem name="itemFour">
               <Icon type="ios-paper"></Icon>
               Item 4
             </MenuItem>
@@ -25,7 +25,7 @@
         </Menu>
       </Header>
       <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
-        Content
+        <router-view></router-view>
       </Content>
       <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
     </Layout>
@@ -38,6 +38,14 @@
     data() {
       return {
 
+      }
+    },
+    methods: {
+      SelectItem(name) {
+        const that = this;
+        this.$nextTick(() => {
+          that.$router.push(name)
+        })
       }
     }
   }

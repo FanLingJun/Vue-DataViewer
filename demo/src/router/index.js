@@ -1,28 +1,60 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Index from '@/pages/index'
 import Test from '@/pages/test'
+import Statistic from '@/group/statistic'
+import itemOne from '@/pages/itemOne'
+import itemTwo from '@/pages/itemThree'
+import itemThree from '@/pages/itemThree'
+import itemFour from '@/pages/itemFour'
+
 
 Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
   routes: [
-    /*{
+    {
       path: ' ',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },*/
+      redirect: {name: 'index'}
+    },
     {
       path: '/index',
       name: 'index',
       component: Index
     },
     {
-      path: '/test',
-      name: 'test',
-      component: Test
+      path: '/statistic',
+      component: Statistic,
+      redirect: {
+        name: 'test'
+      },
+      children: [
+        {
+          path: '',
+          redirect: 'test'
+        },
+        {
+          path: 'test',
+          component: Test
+        },
+        {
+          path: 'itemOne',
+          component: itemOne
+        },
+        {
+          path: 'itemTwo',
+          component: itemTwo
+        },
+        {
+          path: 'itemThree',
+          component: itemThree
+        },
+        {
+          path: 'itemFour',
+          component: itemFour
+        },
+      ]
     },
   ]
 });

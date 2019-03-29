@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!--<img src="./assets/logo.png">-->
-    <div class="layout">
+    <!--<div class="layout">
       <Layout>
         <Header :style="{width: '100%'}">
           <Menu mode="horizontal" theme="dark" active-name="1">
@@ -26,7 +26,7 @@
             </div>
           </Menu>
         </Header>
-        <!--<Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">-->
+        &lt;!&ndash;<Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">&ndash;&gt;
         <Content>
           <div :style="{margin: '80px auto auto auto', background: '#fff'}">
             <router-view/>
@@ -34,7 +34,8 @@
         </Content>
         <Footer class="layout-footer-center">demo样例</Footer>
       </Layout>
-    </div>
+    </div>-->
+    <router-view/>
   </div>
 </template>
 
@@ -55,7 +56,7 @@ export default {
 }
 </style>
 
-
+<!--
 <style scoped>
   .layout{
     border: 1px solid #d7dde4;
@@ -82,4 +83,4 @@ export default {
   .layout-footer-center{
     text-align: center;
   }
-</style>
+</style>-->

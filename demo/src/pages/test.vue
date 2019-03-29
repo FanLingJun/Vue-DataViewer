@@ -1,11 +1,11 @@
 <template>
   <div>
-    TEST!
+    <!--TEST!
     <ButtonGroup>
       <Button type="primary">
         test~
       </Button>
-    </ButtonGroup>
+    </ButtonGroup>-->
     <div id="myChart" :style="{width: '1000px', height: '700px'}"></div>
   </div>
 
