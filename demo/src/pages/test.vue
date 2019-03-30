@@ -1,12 +1,7 @@
 <template>
   <div>
-    <!--TEST!
-    <ButtonGroup>
-      <Button type="primary">
-        test~
-      </Button>
-    </ButtonGroup>-->
-    <div id="myChart" :style="{width: '1000px', height: '700px'}"></div>
+    再看就把你吃掉！！！！
+    <!--<div id="myChart" :style="{width: '1000px', height: '700px'}"></div>-->
   </div>
 
 </template>
@@ -29,7 +24,7 @@
 
       drawLine(){
         // 基于准备好的dom，初始化echarts实例
-        var myChart = echarts.init(document.getElementById('myChart'),'vintage')
+        var myChart = echarts.init(document.getElementById('myChart'),'dark')
         // 绘制图表
         myChart.setOption({
 

@@ -5,7 +5,7 @@
         <Menu mode="horizontal" theme="dark" active-name="1" @on-select="SelectItem">
           <div class="layout-logo"></div>
           <div class="layout-nav">
-            <MenuItem name="test">
+            <MenuItem name="itemOne">
               <Icon type="ios-navigate"></Icon>
               Item 1
             </MenuItem>
@@ -24,10 +24,10 @@
           </div>
         </Menu>
       </Header>
-      <Content :style="{margin: '88px 20px 0', background: '#fff', minHeight: '500px'}">
+      <Content :style="{margin: '30px 200px 0',height: '800px'}">
         <router-view></router-view>
       </Content>
-      <Footer class="layout-footer-center">2011-2016 &copy; TalkingData</Footer>
+      <Footer class="layout-footer-center">电商大数据分析系统</Footer>
     </Layout>
   </div>
 </template>
@@ -62,7 +62,8 @@
   .layout-logo{
     width: 100px;
     height: 30px;
-    background: #5b6270;
+    /*background: #5b6270;*/
+    background: #333333;
     border-radius: 3px;
     float: left;
     position: relative;

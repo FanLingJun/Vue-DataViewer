@@ -4,7 +4,7 @@ import Index from '@/pages/index'
 import Test from '@/pages/test'
 import Statistic from '@/group/statistic'
 import itemOne from '@/pages/itemOne'
-import itemTwo from '@/pages/itemThree'
+import itemTwo from '@/pages/itemTwo'
 import itemThree from '@/pages/itemThree'
 import itemFour from '@/pages/itemFour'
 
