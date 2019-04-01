@@ -1,21 +1,23 @@
 <template>
 
-  <div id="Chart" :style="{ height: '800px'}">
-
-  </div>
+<div>
+  <h1>汽车马力价格之比</h1>
+  <div id="Chart" :style="{ height: '800px'}"></div>
+</div>
 
 </template>
 
 <script>
 
+  import axios from 'axios'
   let echarts = require('echarts')
-  //url = https://echarts.baidu.com/data/asset/data/aqi-beijing.json
 
   export default{
     name: "itemThree",
     data() {
       return {
-        msg:'test!'
+        msg:'test!',
+        array:[[]]
       }
     },
     mounted() {
@@ -24,103 +26,67 @@
     methods: {
       initData(msg) {
         var Chart = echarts.init(document.getElementById('Chart'))
-        fetch('https://echarts.baidu.com/data/asset/data/aqi-beijing.json')
+        //定义一个一维数组
+        for (let k = 0;k < 3;k++)
+        {
+          this.array[k] = [];
+          this.array[k][2] = '';
+          for (let i = 0;i < 2;i ++)
+          {
+            this.array[k][i] = 0;
+          }
+        }
+
+        fetch('/api/NumberData')
           .then((response) => response.json())
           .then(json => {
-            this.data = json.data
-
+            for (let i = 0;i < 3;i++)
+            {
+              this.array[i][0] = json.data[i].money;
+              this.array[i][1] = json.data[i].horsepower;
+              this.array[i][2] = json.data[i].name;
+            }
             Chart.setOption({
-              title: {
-                text: 'Beijing AQI'
-              },
-              tooltip: {
-                trigger: 'axis'
-              },
-              xAxis: {
-                data: data.map(function (item) {
-                  return item[0];
-                })
-              },
-              yAxis: {
-                splitLine: {
-                  show: false
-                }
-              },
-              toolbox: {
-                left: 'center',
-                feature: {
-                  dataZoom: {
-                    yAxisIndex: 'none'
+                title: {
+                  text: '',
+                },
+                tooltip: {
+                  formatter: '{c}'
+                },
+                xAxis: {
+                  name:'价格',
+                  nameTextStyle: {
+                    fontSize: 18
                   },
-                  restore: {},
-                  saveAsImage: {}
-                }
-              },
-              dataZoom: [{
-                startValue: '2014-06-01'
-              }, {
-                type: 'inside'
-              }],
-              visualMap: {
-                top: 10,
-                right: 10,
-                pieces: [{
-                  gt: 0,
-                  lte: 50,
-                  color: '#096'
+                  scale: true
+                },
+                yAxis: {
+                  name: '马力',
+                  nameTextStyle: {
+                    fontSize: 18
+                  },
+                  scale: true
+                },
+                series: [{
+                  type: 'effectScatter',
+                  symbolSize: 20,
+                  data: [
+                    [160, 40],
+                    [190, 80]
+                  ],
                 }, {
-                  gt: 50,
-                  lte: 100,
-                  color: '#ffde33'
-                }, {
-                  gt: 100,
-                  lte: 150,
-                  color: '#ff9933'
-                }, {
-                  gt: 150,
-                  lte: 200,
-                  color: '#cc0033'
-                }, {
-                  gt: 200,
-                  lte: 300,
-                  color: '#660099'
-                }, {
-                  gt: 300,
-                  color: '#7e0023'
-                }],
-                outOfRange: {
-                  color: '#999'
-                }
-              },
-              series: {
-                name: 'Beijing AQI',
-                type: 'line',
-                data: data.map(function (item) {
-                  return item[1];
-                }),
-                markLine: {
-                  silent: true,
-                  data: [{
-                    yAxis: 50
-                  }, {
-                    yAxis: 100
-                  }, {
-                    yAxis: 150
-                  }, {
-                    yAxis: 200
-                  }, {
-                    yAxis: 300
-                  }]
-                }
-              }
-            })
+                  type: 'scatter',
+                  data: this.array,
+                }]
+          })
           })
       }
     }
   }
-
 </script>
 
 <style>
-
+#Chart {
+  margin:0 auto;
+}
 </style>

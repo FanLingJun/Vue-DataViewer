@@ -63,7 +63,7 @@
     width: 100px;
     height: 30px;
     /*background: #5b6270;*/
-    background: #333333;
+    background: #515A6E;
     border-radius: 3px;
     float: left;
     position: relative;

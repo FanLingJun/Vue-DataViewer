@@ -1,0 +1,26 @@
+[
+  {
+    "name":"奥迪",
+    "money":161.2,
+    "speed":200,
+    "wheelbase":195,
+    "horsepower":51.6,
+    "engine":900
+  },
+  {
+    "name":"沃尔沃",
+    "money":167.5,
+    "speed":201,
+    "wheelbase":195,
+    "horsepower":59.0,
+    "engine":900
+  },
+  {
+    "name":"梅赛德斯",
+    "money":159.5,
+    "speed":230,
+    "wheelbase":195,
+    "horsepower":49.2,
+    "engine":900
+  }
+]
