@@ -1,17 +1,22 @@
 <template>
   <div>
-    <h1>test</h1>
-    <div id="myChart" :style="{ height: '800px'}"></div>
+    <h1>汽车速度/马力之比</h1>
+    <div id="myChart" :style="{ height: '700px'}"></div>
   </div>
 
 </template>
 
 <script>
+
+  let echarts = require('echarts');
+
   export default{
     name: "itemFour",
     data() {
       return {
-        msg:'test!'
+        msg:'test!',
+        array1: [],
+        array2: []
       }
     },
     mounted() {
@@ -22,10 +27,18 @@
 
         var myChart = echarts.init(document.getElementById('myChart'))
 
-
         fetch('/api/NumberData')
           .then((response) => response.json())
           .then(json => {
+            for (let i = 100;i <= 3000;i = i + 50)
+            {
+              this.array1.push(json.data[i].speed)
+              this.array2.push(json.data[i].power)
+            }
+            //console.log("~~~~~~~")
+            //console.log(this.array1)
+            //console.log(this.array2)
+
             myChart.setOption({
               tooltip : {
                 trigger: 'axis',
@@ -60,13 +73,13 @@
               xAxis: [
                 {
                   type : 'category',
-                  data : obama_budget_2012.names
+                  data : this.array1
                 }
               ],
               yAxis: [
                 {
                   type : 'value',
-                  name : 'Budget (million USD)',
+                  name : '比值',
                   axisLabel: {
                     formatter: function (a) {
                       a = +a;
@@ -100,14 +113,14 @@
               ],
               series : [
                 {
-                  name: 'Budget 2011',
+                  name: 'Car Power',
                   type: 'bar',
-                  data: obama_budget_2012.budget2011List
+                  data: this.array2
                 },
                 {
-                  name: 'Budget 2012',
+                  name: 'Car Speed',
                   type: 'bar',
-                  data: obama_budget_2012.budget2012List
+                  data: this.array1
                 }
               ]
             })
@@ -124,5 +137,8 @@
 </script>
 
 <style>
+#myChart{
+  margin: 0 auto 200px auto;
 
+}
 </style>

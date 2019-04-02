@@ -27,7 +27,7 @@
       initData(msg) {
         var Chart = echarts.init(document.getElementById('Chart'))
         //定义一个一维数组
-        for (let k = 0;k < 3;k++)
+        for (let k = 0;k < 4000;k++)
         {
           this.array[k] = [];
           this.array[k][2] = '';
@@ -37,15 +37,21 @@
           }
         }
 
-        fetch('/api/NumberData')
+        fetch('/api/NumberData',{
+        })
           .then((response) => response.json())
           .then(json => {
-            for (let i = 0;i < 3;i++)
+            for (let i = 1;i < 4000;i = i + 40)
             {
-              this.array[i][0] = json.data[i].money;
-              this.array[i][1] = json.data[i].horsepower;
-              this.array[i][2] = json.data[i].name;
+              this.array[i][0] = json.data[i].price;
+              this.array[i][1] = json.data[i].housepower;
+              msg = json.data[i].name;
+              console.log(msg);
+              this.array[i][2] = msg;
+              console.log(this.array[i][2]);
             }
+            console.log(this.array);
+            //console.log(this.array[i][2]);
             Chart.setOption({
                 title: {
                   text: '',
