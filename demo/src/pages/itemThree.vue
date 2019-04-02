@@ -25,6 +25,7 @@
     },
     methods: {
       initData(msg) {
+
         var Chart = echarts.init(document.getElementById('Chart'))
         //定义一个一维数组
         for (let k = 0;k < 4000;k++)
@@ -45,12 +46,9 @@
             {
               this.array[i][0] = json.data[i].price;
               this.array[i][1] = json.data[i].housepower;
-              msg = json.data[i].name;
-              console.log(msg);
-              this.array[i][2] = msg;
-              console.log(this.array[i][2]);
+              this.array[i][2] = json.data[i].name;
             }
-            console.log(this.array);
+            //console.log(this.array);
             //console.log(this.array[i][2]);
             Chart.setOption({
                 title: {
@@ -60,14 +58,14 @@
                   formatter: '{c}'
                 },
                 xAxis: {
-                  name:'价格',
+                  name:'价格(万元)',
                   nameTextStyle: {
                     fontSize: 18
                   },
                   scale: true
                 },
                 yAxis: {
-                  name: '马力',
+                  name: '最大马力(ps)',
                   nameTextStyle: {
                     fontSize: 18
                   },

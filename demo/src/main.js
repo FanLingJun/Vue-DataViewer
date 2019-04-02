@@ -24,23 +24,6 @@ Vue.use(woldCloud)
 
 Vue.config.productionTip = false
 
-
-Vue.prototype.changeData = function () {
-  alert('执行成功');
-};
-
-
-Vue.prototype.Search = function (a,b,array){
-
-    for (let i = 0;i < 3;i ++)
-    {
-      if (array[i][0] === a&&array[i][1] === b)
-        return array[i][2];
-    }
-
-};
-
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
