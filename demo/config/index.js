@@ -11,13 +11,13 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      /*'ap': {
-        target: 'https://echarts.baidu.com',
-        changeOrigin: true,
-        pathRerite: {
-          '^/ap': ''
-        }
-      }*/
+      '/data': {
+        target: 'http://localhost:8081'
+      },
+      '/alldata': {
+        target: 'http://localhost:8081'
+      }
+
     },
 
     // Various Dev Server settings
