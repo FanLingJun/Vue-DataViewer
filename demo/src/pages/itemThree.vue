@@ -38,15 +38,14 @@
           }
         }
 
-        fetch('/api/NumberData',{
-        })
+        fetch('/alldata',{})
           .then((response) => response.json())
           .then(json => {
             for (let i = 1;i < 4000;i = i + 40)
             {
-              this.array[i][0] = json.data[i].price;
-              this.array[i][1] = json.data[i].housepower;
-              this.array[i][2] = json.data[i].name;
+              this.array[i][0] = json[i].price;
+              this.array[i][1] = json[i].power;
+              this.array[i][2] = json[i].name;
             }
             //console.log(this.array);
             //console.log(this.array[i][2]);

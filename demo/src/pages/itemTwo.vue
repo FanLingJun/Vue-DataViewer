@@ -25,7 +25,7 @@
 
         var myChart = echarts.init(document.getElementById('myChart'));
 
-        for (let k = 0;k < 4000;k++)
+        for (let k = 0;k < 8000;k++)
         {
           this.array[k] = [];
           this.array[k][2] = '';
@@ -35,15 +35,15 @@
           }
         }
 
-        fetch('/api/numberData')
+        fetch('/alldata')
           .then(response => response.json())
           .then(json => {
 
-            for (let i = 1;i < 4000;i = i + 40)
+            for (let i = 1;i < 8000;i = i + 20)
             {
-              this.array[i][0] = json.data[i].price;
-              this.array[i][1] = json.data[i].displacement;
-              this.array[i][2] = json.data[i].name;
+              this.array[i][0] = json[i].price;
+              this.array[i][1] = json[i].displacement;
+              this.array[i][2] = json[i].name;
             }
             myChart.setOption({
               title: {

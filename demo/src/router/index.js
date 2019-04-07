@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/index'
 import Test from '@/pages/test'
+//import Test from '@/pages/siglepage/test'
 import Statistic from '@/group/statistic'
 import itemOne from '@/pages/itemOne'
 import itemTwo from '@/pages/itemTwo'
@@ -24,19 +25,20 @@ const router = new Router({
       component: Index
     },
     {
+      path: '/test',
+      name: 'test',
+      component: Test
+    },
+    {
       path: '/statistic',
       component: Statistic,
       redirect: {
-        name: 'test'
+        name: 'itemOne'
       },
       children: [
         {
           path: '',
-          redirect: 'test'
-        },
-        {
-          path: 'test',
-          component: Test
+          redirect: 'itemOne'
         },
         {
           path: 'itemOne',

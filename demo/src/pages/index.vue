@@ -45,7 +45,6 @@
     data() {
       return {
         msg:'test!',
-        name: 'statistic',
         List: [],
         nameList: [],
         min: 346,

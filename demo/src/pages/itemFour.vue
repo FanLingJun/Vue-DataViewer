@@ -16,7 +16,8 @@
       return {
         msg:'test!',
         array1: [],
-        array2: []
+        array2: [],
+        array_name: []
       }
     },
     mounted() {
@@ -27,13 +28,15 @@
 
         var myChart = echarts.init(document.getElementById('myChart'))
 
-        fetch('/api/NumberData')
+        //fetch('/api/NumberData')
+        fetch('/alldata')
           .then((response) => response.json())
           .then(json => {
-            for (let i = 100;i <= 3000;i = i + 50)
+            for (let i = 0;i <= 10000;i = i + 50)
             {
-              this.array1.push(json.data[i].speed)
-              this.array2.push(json.data[i].power)
+              this.array1.push(json[i].speed)
+              this.array2.push(json[i].power)
+              this.array_name.push(json[i].name)
             }
             //console.log("~~~~~~~")
             //console.log(this.array1)
@@ -73,7 +76,7 @@
               xAxis: [
                 {
                   type : 'category',
-                  data : this.array1
+                  data : this.array_name
                 }
               ],
               yAxis: [
@@ -122,6 +125,10 @@
                   type: 'bar',
                   data: this.array1
                 }
+                /*{
+                  name: 'Car Name',
+                  data: this.msg
+                }*/
               ]
             })
           })
