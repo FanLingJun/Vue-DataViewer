@@ -41,7 +41,7 @@
         fetch('/alldata',{})
           .then((response) => response.json())
           .then(json => {
-            for (let i = 1;i < 4000;i = i + 40)
+            for (let i = 1;i < 4000;i = i + 2)
             {
               this.array[i][0] = json[i].price;
               this.array[i][1] = json[i].power;
@@ -50,7 +50,60 @@
             //console.log(this.array);
             //console.log(this.array[i][2]);
             Chart.setOption({
+
                 title: {
+                  text: '',
+                  left: 'center',
+                  top: 0
+                },
+                visualMap: {
+                  min: 0,
+                  max: 140,
+                  dimension: 1,
+                  orient: 'vertical',
+                  right: 10,
+                  top: 'center',
+                  text: ['HIGH', 'LOW'],
+                  calculable: true,
+                  inRange: {
+                    color: ['#f2c31a', '#24b7f2']
+                  }
+                },
+                tooltip: {
+                  trigger: 'item',
+                  axisPointer: {
+                    type: 'cross'
+                  },
+                  formatter: '{c}'
+                },
+                xAxis: [{
+                  type: 'value',
+                  max: 150
+
+                }],
+                yAxis: [{
+                  type: 'value',
+                  max: 140
+                }],
+                series: [{
+                  name: 'price-area',
+                  type: 'scatter',
+                  symbolSize: 5,
+                  // itemStyle: {
+                  //     normal: {
+                  //         borderWidth: 0.2,
+                  //         borderColor: '#fff'
+                  //     }
+                  // },
+                  data: this.array
+                }]
+
+
+
+
+
+
+/*                title: {
                   text: '',
                 },
                 tooltip: {
@@ -72,15 +125,15 @@
                 },
                 series: [{
                   type: 'effectScatter',
-                  symbolSize: 20,
-                  data: [
+                  symbolSize: 10,
+                  /!*data: [
                     [160, 40],
                     [190, 80]
-                  ],
+                  ],*!/
                 }, {
                   type: 'scatter',
                   data: this.array,
-                }]
+                }]*/
           })
           })
       }

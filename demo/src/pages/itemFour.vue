@@ -125,10 +125,6 @@
                   type: 'bar',
                   data: this.array1
                 }
-                /*{
-                  name: 'Car Name',
-                  data: this.msg
-                }*/
               ]
             })
           })

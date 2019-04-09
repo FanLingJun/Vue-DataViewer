@@ -2,8 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/pages/index'
 import Test from '@/pages/test'
-//import Test from '@/pages/siglepage/test'
+
 import Statistic from '@/group/statistic'
+import itemZero from '@/pages/itemZero'
 import itemOne from '@/pages/itemOne'
 import itemTwo from '@/pages/itemTwo'
 import itemThree from '@/pages/itemThree'
@@ -33,12 +34,16 @@ const router = new Router({
       path: '/statistic',
       component: Statistic,
       redirect: {
-        name: 'itemOne'
+        name: 'itemZero'
       },
       children: [
         {
           path: '',
-          redirect: 'itemOne'
+          redirect: 'itemZero'
+        },
+        {
+          path: 'itemZero',
+          component: itemZero
         },
         {
           path: 'itemOne',
