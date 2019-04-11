@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>汽车速度/马力之比</h1>
+    <h1>汽车速度&马力</h1>
     <div id="myChart" :style="{ height: '700px'}"></div>
   </div>
 

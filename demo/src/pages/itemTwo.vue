@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>汽车排量价格之比</h1>
+    <h1>汽车排量&价格</h1>
     <div id="myChart" :style="{ height: '800px'}"></div>
   </div>
 </template>
@@ -39,7 +39,7 @@
           .then(response => response.json())
           .then(json => {
 
-            for (let i = 1;i < 8000;i = i + 20)
+            for (let i = 1000;i < 8000;i = i + 9)
             {
               this.array[i][0] = json[i].price;
               this.array[i][1] = json[i].displacement;
@@ -57,7 +57,7 @@
                 nameTextStyle: {
                   fontSize: 18
                 },
-                scale: true
+                //scale: true
               },
               yAxis: {
                 name: '排量(L)',
@@ -66,7 +66,7 @@
                 nameTextStyle: {
                   fontSize: 18
                 },
-                scale: true
+                //scale: true
               },
               series: [{
                 type: 'effectScatter',

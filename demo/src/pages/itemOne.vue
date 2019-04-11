@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>汽车功率/整备质量</h1>
+    <h1>汽车功率&整备质量</h1>
     <div id="myChart" :style="{width: '1000px', height: '700px'}"></div>
   </div>
 

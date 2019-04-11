@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <h1>汽车马力价格之比</h1>
+  <h1>汽车马力&价格</h1>
   <div id="Chart" :style="{ height: '800px'}"></div>
 </div>
 

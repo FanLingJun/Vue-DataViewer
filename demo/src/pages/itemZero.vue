@@ -15,13 +15,13 @@
     <h1>平均升功率：<span class="num0">57.75</span>kW/L</h1>
     <br>
     <h1>平均排量：<span class="num0">2.88</span>L</h1>
-    <br>
-    <h1>平均整备重量：<span class="num0">14872</span>Kg</h1>
+    <!--<br>
+    <h1>平均整备重量：<span class="num0">14872</span>Kg</h1>-->
     <br><br>
     <h1>最贵的车：<span class="num1">Icona-Vulcano(跑车)</span>6680万元</h1>
     <br>
-    <h1>速度最快的车：<span class="num1">华晨金杯-海狮</span>1690km/h</h1>
-    <br>
+    <!--<h1>速度最快的车：<span class="num1">华晨金杯-海狮</span>1690km/h</h1>
+    <br>-->
     <h1>最大排量：<span class="num1">迈凯伦-P1</span>3.5L</h1>
     <br>
     <h1>升功率最高的车：<span class="num1">科尼赛克-Agera</span>1415kW/L</h1>
