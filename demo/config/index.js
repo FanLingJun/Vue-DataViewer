@@ -16,6 +16,9 @@ module.exports = {
       },
       '/alldata': {
         target: 'http://localhost:8081'
+      },
+      '/wordcloudData': {
+        target: 'http://localhost:8081'
       }
 
     },

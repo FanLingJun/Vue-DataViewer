@@ -14,15 +14,9 @@ const portfinder = require('portfinder')
 
 const express = require('express');
 const app = express();//请求server
-const appData = require('../data.json');//加载本地数据文件
-const ThreeData = require('../namedata.json');
-const NumberData = require('../number.json');
+//const appData = require('../re.json');
 
-const nameList = appData.data;//获取对应的本地数据
-const allData = appData;
-const numberData = NumberData;
-
-const MoneyList = ThreeData;
+//const allData = appData;
 
 const apiRoutes = express.Router();
 app.use('/api', apiRoutes);//通过路由请求数据
@@ -62,34 +56,17 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     },
 
-    //
-    before(app) {
+
+    /*before(app) {
       app.get('/api/allData', (req, res) => {
         res.json({
           errno: 0,
           data: allData
         })//接口返回json数据，上面配置的数据就赋值给data请求后调用
-      }),
-      app.get('/api/nameList', (req, res) => {
-        res.json({
-          errno: 0,
-          data: nameList
-        })//接口返回json数据，上面配置的数据就赋值给data请求后调用
-      }),
-      app.get('/api/MoneyList', (req, res) => {
-        res.json({
-          errno: 0,
-          data: MoneyList
-        })
-      }),
-      app.get('/api/NumberData', (req, res) => {
-        res.json({
-          errno: 0,
-          data: numberData
-        })
       })
-    }
-    //
+
+    }*/
+
   },
 
   plugins: [

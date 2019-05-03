@@ -21,10 +21,14 @@
               <Icon type="ios-paper"></Icon>
               Item 4
             </MenuItem>
+            <MenuItem name="datastatistic">
+              <Icon type="ios-aperture"></Icon>
+              Item 5
+            </MenuItem>
           </div>
         </Menu>
       </Header>
-      <Content :style="{margin: '30px 200px 0',height: '800px'}">
+      <Content :style="{margin: '30px 200px 0'}">
         <router-view></router-view>
       </Content>
       <Footer class="layout-footer-center">电商大数据分析系统</Footer>
@@ -71,7 +75,7 @@
     left: 20px;
   }
   .layout-nav{
-    width: 420px;
+    width: 520px;
     margin: 0 auto;
     margin-right: 20px;
   }

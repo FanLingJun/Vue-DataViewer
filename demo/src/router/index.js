@@ -9,6 +9,7 @@ import itemOne from '@/pages/itemOne'
 import itemTwo from '@/pages/itemTwo'
 import itemThree from '@/pages/itemThree'
 import itemFour from '@/pages/itemFour'
+import datastatistic from '@/pages/datastatistic'
 
 
 Vue.use(Router)
@@ -61,6 +62,10 @@ const router = new Router({
           path: 'itemFour',
           component: itemFour
         },
+        {
+          path: 'datastatistic',
+          component: datastatistic
+        }
       ]
     },
   ]

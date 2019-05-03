@@ -26,6 +26,9 @@
     <br>
     <h1>升功率最高的车：<span class="num1">科尼赛克-Agera</span>1415kW/L</h1>
 
+    <!--<Button type="success" to="datasatistic" style="margin-top: 100px;width: 200px" long>
+      详细分析情况</Button>-->
+
   </div>
 
 </div>
@@ -52,7 +55,7 @@ export default {
   margin-right: -200px;
   width: 1300px;
   height: 800px;
-  background: url("../assets/car2.jpg") no-repeat;
+  /*background: url("../assets/car2.jpg") no-repeat;*/
 }
 
 .main .main1 {
