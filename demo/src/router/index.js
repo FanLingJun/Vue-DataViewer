@@ -9,6 +9,7 @@ import itemOne from '@/pages/itemOne'
 import itemTwo from '@/pages/itemTwo'
 import itemThree from '@/pages/itemThree'
 import itemFour from '@/pages/itemFour'
+import itemSix from '@/pages/itemSix'
 import datastatistic from '@/pages/datastatistic'
 
 
@@ -65,7 +66,11 @@ const router = new Router({
         {
           path: 'datastatistic',
           component: datastatistic
-        }
+        },
+        {
+          path: 'itemSix',
+          component: itemSix
+        },
       ]
     },
   ]

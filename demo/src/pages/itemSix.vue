@@ -1,20 +1,20 @@
 <template>
-  <!--<div class="wrapper">
-      <div class="left">
-        <div id="myChart" style="width: 800px;height: 600px"></div>
-      </div>
-      <div class="right">
-          <Input search enter-button="Search" v-model="CarName" @on-search="SearchCar"/>
-          <Scroll class="scroll">
-            <RadioGroup v-model="CarType" @on-change="ChangeData" class="radio" vertical>
-              <Radio v-for="(item, index) in nameList" :label="index" :key="index" style="margin: 8px 0">
-                {{ item }}
-              </Radio>
-            </RadioGroup>
-          </Scroll>
-      </div>
+  <div class="wrapper">
+    <div class="left">
+      <div id="myChart" style="width: 800px;height: 600px"></div>
+    </div>
+    <div class="right">
+      <Input search enter-button="Search" v-model="CarName" @on-search="SearchCar"/>
+      <Scroll class="scroll">
+        <RadioGroup v-model="CarType" @on-change="ChangeData" class="radio" vertical>
+          <Radio v-for="(item, index) in nameList" :label="index" :key="index" style="margin: 8px 0">
+            {{ item }}
+          </Radio>
+        </RadioGroup>
+      </Scroll>
+    </div>
 
-  </div>-->
+  </div>
 </template>
 
 <script>
@@ -22,10 +22,10 @@
   let echarts = require('echarts')
 
   export default {
-    name: "test",
+    name: "itemSix",
     data() {
       return {
-        name: 'test!',
+        name: 'itemSix!',
         CarName: '一汽奥迪A3 Sportback',
         CarType: '1',
         nameList: [],
@@ -33,7 +33,6 @@
         saleData: [],
         array: [],
         data: [],
-
       }
     },
     mounted() {
@@ -69,21 +68,21 @@
               this.saleData.push(this.array[i].salesNum);
             }
             myChart.setOption({
-                title: {
-                  text: this.nameList[this.CarType] + '过去几个月的销量'
-                },
-                xAxis: {
-                  type: 'category',
-                  data: this.yearData
-                },
-                color:['#3398DB'],
-                yAxis: {
-                  type: 'value'
-                },
-                series: [{
-                  data: this.saleData,
-                  type: 'line'
-                }]
+              title: {
+                text: this.nameList[this.CarType] + '过去几个月的销量'
+              },
+              xAxis: {
+                type: 'category',
+                data: this.yearData
+              },
+              color:['#3398DB'],
+              yAxis: {
+                type: 'value'
+              },
+              series: [{
+                data: this.saleData,
+                type: 'line'
+              }]
             })
           })
 
@@ -146,18 +145,18 @@
 </script>
 
 <style scoped lang="css">
-.wrapper {
-  display: flex;
-  flex-direction:row;
-}
-.right {
-  margin-top: 80px;
-}
-.radio {
-  margin-top: 50px;
-}
-.scroll{
-  margin-top:30px;
-}
+  .wrapper {
+    display: flex;
+    flex-direction:row;
+  }
+  .right {
+    margin-top: 80px;
+  }
+  .radio {
+    margin-top: 50px;
+  }
+  .scroll{
+    margin-top:30px;
+  }
 
 </style>

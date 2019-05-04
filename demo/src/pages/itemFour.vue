@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>汽车速度&马力</h1>
     <div id="myChart" :style="{ height: '700px'}"></div>
   </div>
 
@@ -43,6 +42,9 @@
             //console.log(this.array2)
 
             myChart.setOption({
+              title: {
+                text: '汽车速度&马力'
+              },
               tooltip : {
                 trigger: 'axis',
                 axisPointer: {
@@ -54,19 +56,15 @@
               },
               toolbox: {
                 show : true,
+                itemSize: 20,
+                orient: 'vertical',
+                top: 300,
                 feature : {
-                  mark : {show: true},
                   dataView : {show: true, readOnly: false},
                   magicType: {show: true, type: ['line', 'bar']},
-                  restore : {show: true},
-                  saveAsImage : {show: true}
                 }
               },
               calculable : true,
-              legend: {
-                data:['Growth', 'Budget 2011', 'Budget 2012'],
-                itemGap: 5
-              },
               grid: {
                 top: '12%',
                 left: '1%',

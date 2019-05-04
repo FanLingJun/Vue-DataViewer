@@ -70,7 +70,7 @@
           .then(response => response.json())
           .then(json => {
             this.Object = json
-            console.log(json.name)
+            //console.log(json.name)
             this.nameList = this.Object.index;
             this.valueList = this.Object.data;
             for (let i = 0; i < 574;i++)
@@ -81,9 +81,9 @@
                 itemStyle: this.createRandomItemStyle()
               });
             }
-            console.log(this.nameList)
-            console.log(this.valueList)
-            console.log(this.data)
+            //console.log(this.nameList)
+            //console.log(this.valueList)
+            //console.log(this.data)
 
             myChart.setOption({
               title: {

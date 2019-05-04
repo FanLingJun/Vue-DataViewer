@@ -6,24 +6,34 @@
           <div class="layout-logo"></div>
           <div class="layout-nav">
             <MenuItem name="itemOne">
-              <Icon type="ios-navigate"></Icon>
-              Item 1
+              <Icon type="ios-car-outline" />
+              汽&nbsp;
+              <Icon type="ios-car-outline" />
             </MenuItem>
             <MenuItem name="itemTwo">
-              <Icon type="ios-keypad"></Icon>
-              Item 2
+              <Icon type="ios-car-outline" />
+              车&nbsp;
+              <Icon type="ios-car-outline" />
             </MenuItem>
             <MenuItem name="itemThree">
-              <Icon type="ios-analytics"></Icon>
-              Item 3
+              <Icon type="ios-car-outline" />
+              数&nbsp;
+              <Icon type="ios-car-outline" />
             </MenuItem>
             <MenuItem name="itemFour">
-              <Icon type="ios-paper"></Icon>
-              Item 4
+              <Icon type="ios-car-outline" />
+              据&nbsp;
+              <Icon type="ios-car-outline" />
             </MenuItem>
             <MenuItem name="datastatistic">
-              <Icon type="ios-aperture"></Icon>
-              Item 5
+              <Icon type="ios-car-outline" />
+              分&nbsp;
+              <Icon type="ios-car-outline" />
+            </MenuItem>
+            <MenuItem name="itemSix">
+              <Icon type="ios-car-outline" />
+              析&nbsp;
+              <Icon type="ios-car-outline" />
             </MenuItem>
           </div>
         </Menu>
@@ -75,9 +85,10 @@
     left: 20px;
   }
   .layout-nav{
-    width: 520px;
+    width: 640px;
     margin: 0 auto;
-    margin-right: 20px;
+    /*margin-right: 10px;*/
+    font-size: 80px;
   }
   .layout-footer-center{
     text-align: center;
