@@ -1,20 +1,9 @@
+<!--
 <template>
-  <!--<div class="wrapper">
-      <div class="left">
-        <div id="myChart" style="width: 800px;height: 600px"></div>
-      </div>
-      <div class="right">
-          <Input search enter-button="Search" v-model="CarName" @on-search="SearchCar"/>
-          <Scroll class="scroll">
-            <RadioGroup v-model="CarType" @on-change="ChangeData" class="radio" vertical>
-              <Radio v-for="(item, index) in nameList" :label="index" :key="index" style="margin: 8px 0">
-                {{ item }}
-              </Radio>
-            </RadioGroup>
-          </Scroll>
-      </div>
-
-  </div>-->
+  <div class="wrapper">
+    &lt;!&ndash;<div id="myChart" style="width: 1500px;height: 1000px"></div>&ndash;&gt;
+    &lt;!&ndash;<div id="Chart" style="width: 800px;height: 600px"></div>&ndash;&gt;
+  </div>
 </template>
 
 <script>
@@ -26,121 +15,168 @@
     data() {
       return {
         name: 'test!',
-        CarName: '一汽奥迪A3 Sportback',
-        CarType: '1',
+        temp: [],
+        categories: [
+          {
+            "name": "HTMLElement",
+            "keyword": {},
+            "base": "HTMLElement"
+          },
+          {
+            "name": "WebGL",
+            "keyword": {},
+            "base": "WebGLRenderingContext"
+          },
+          {
+            "name": "SVG",
+            "keyword": {},
+            "base": "SVGElement"
+          },
+          {
+            "name": "CSS",
+            "keyword": {},
+            "base": "CSSRule"
+          },
+          {
+            "name": "Other",
+            "keyword": {}
+          }
+        ],
+        data: [
+          {
+            "name": "鲁迅",
+            "value": 40,
+            "category": 4
+          },
+          ],
+        links: [
+          ],
         nameList: [],
-        yearData: [],
-        saleData: [],
-        array: [],
-        data: [],
+        comment_num: [],
+        score: []
 
       }
     },
     mounted() {
-      //this.init();
+
       this.initData('初始化数据成功');
     },
     methods: {
       initData(msg) {
-        var myChart = echarts.init(document.getElementById("myChart"))
-        fetch('/saleNumber')
-          .then((response) => response.json())
-          .then(json =>  {
-            var i = 0;
-            //console.log(json[i])
-            this.array = [];
-            this.yearData = [];
-            this.saleData = [];
-            this.array = json[i];
-            //console.log(this.array[i].salesDate)
 
-            for (let i = 0;i < json.length;i++)
-            {
-              if (json[i].length != 0&&json[i][0].name != null)
-              {
-                //console.log(json[i][0].name);
-                this.nameList.push(json[i][0].name);
+        var Chart = echarts.init(document.getElementById("Chart"))
+
+
+        fetch('/api/luxunData')
+          .then((response) => response.json())
+          .then(json => {
+            var k = 0
+            for (let i = 0; i < 905; i++) {
+
+              if (json.data[i].score !== 0&&json.data[i].comment_num > 300) {
+
+                this.nameList[k] = json.data[i].name;
+                this.comment_num[k] = json.data[i].comment_num;
+                this.score[k] = json.data[i].score;
+                k++;
               }
+
             }
+            console.log(this.nameList)
+            Chart.setOption({
 
-            for (let i = 0;i < this.array.length;i++)
-            {
-              this.yearData.push(this.array[i].salesDate);
-              this.saleData.push(this.array[i].salesNum);
-            }
-            myChart.setOption({
-                title: {
-                  text: this.nameList[this.CarType] + '过去几个月的销量'
-                },
-                xAxis: {
-                  type: 'category',
-                  data: this.yearData
-                },
-                color:['#3398DB'],
-                yAxis: {
-                  type: 'value'
-                },
-                series: [{
-                  data: this.saleData,
-                  type: 'line'
-                }]
-            })
-          })
-
-      },
-
-      ChangeData() {
-        var myChart = echarts.init(document.getElementById("myChart"))
-        fetch('/saleNumber')
-          .then((response) => response.json())
-          .then(json =>  {
-            var i = this.CarType - 1;
-            //console.log(json[i])
-            this.array = [];
-            this.yearData = [];
-            this.saleData = [];
-            this.array = json[i];
-            //console.log(this.array[i].salesDate)
-
-            for (let i = 0;i < this.array.length;i++)
-            {
-              this.yearData.push(this.array[i].salesDate);
-              this.saleData.push(this.array[i].salesNum);
-            }
-            myChart.setOption({
               title: {
-                text: this.nameList[this.CarType] + '过去几个月的销量'
+                text: '作品评论数/豆瓣评分'
               },
-              xAxis: {
-                type: 'category',
-                data: this.yearData
+              tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                  type: 'shadow',
+                  label: {
+                    show: true
+                  }
+                }
               },
-              color:['#3398DB'],
-              yAxis: {
-                type: 'value'
+              toolbox: {
+                show: true,
+                itemSize: 20,
+                orient: 'vertical',
+                top: 300,
+                feature: {
+                  dataView: {show: true, readOnly: false},
+                  magicType: {show: true, type: ['line', 'bar']},
+                }
               },
-              series: [{
-                data: this.saleData,
-                type: 'line'
-              }]
+              calculable: true,
+              grid: {
+                top: '12%',
+                left: '1%',
+                right: '10%',
+                containLabel: true
+              },
+              xAxis: [
+                {
+                  type: 'category',
+                  data: this.nameList
+                }
+              ],
+              yAxis: [
+                {
+                  type: 'value',
+                  name: '比值',
+                  axisLabel: {
+                    formatter: function (a) {
+                      a = +a;
+                      return isFinite(a)
+                        ? echarts.format.addCommas(+a / 1000)
+                        : '';
+                    }
+                  }
+                }
+              ],
+              dataZoom: [
+                {
+                  show: true,
+                  start: 94,
+                  end: 100
+                },
+                {
+                  type: 'inside',
+                  start: 94,
+                  end: 100
+                },
+                {
+                  show: true,
+                  yAxisIndex: 0,
+                  filterMode: 'empty',
+                  width: 30,
+                  height: '80%',
+                  showDataShadow: false,
+                  left: '93%'
+                }
+              ],
+              series: [
+                {
+                  name: '评论数',
+                  type: 'bar',
+                  data: this.comment_num
+                },
+                {
+                  name: '评分',
+                  type: 'bar',
+                  data: this.score
+                }
+              ]
+
+
             })
 
 
-
           })
-
       },
 
-      SearchCar() {
-        for (let i = 0;i < this.nameList.length;i++)
-        {
-          if (this.nameList[i] == this.CarName)
-          {
-            this.CarType = i;
-            this.ChangeData();
-          }
-        }
-      }
+
+
     }
   }
 </script>
@@ -150,14 +186,6 @@
   display: flex;
   flex-direction:row;
 }
-.right {
-  margin-top: 80px;
-}
-.radio {
-  margin-top: 50px;
-}
-.scroll{
-  margin-top:30px;
-}
 
 </style>
+-->

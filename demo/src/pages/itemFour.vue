@@ -42,6 +42,9 @@
             //console.log(this.array2)
 
             myChart.setOption({
+
+
+
               title: {
                 text: '汽车速度&马力'
               },
@@ -124,6 +127,12 @@
                   data: this.array1
                 }
               ]
+
+
+
+
+
+
             })
           })
 

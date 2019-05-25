@@ -15,7 +15,7 @@ const portfinder = require('portfinder')
 const express = require('express');
 const app = express();//请求server
 //const appData = require('../re.json');
-
+//const luxunData = require('../luxun.json')
 //const allData = appData;
 
 const apiRoutes = express.Router();
@@ -58,10 +58,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
 
     /*before(app) {
-      app.get('/api/allData', (req, res) => {
+      app.get('/api/luxunData', (req, res) => {
         res.json({
           errno: 0,
-          data: allData
+          data: luxunData
         })//接口返回json数据，上面配置的数据就赋值给data请求后调用
       })
 

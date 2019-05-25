@@ -9,17 +9,17 @@
     </CarouselItem>
     <CarouselItem>
       <div class="wrapper">
-        <img height="580px" width="100%" src="http://a4.qpic.cn/psb?/V10GZ44l3v5uHj/iJWjMf27GGEJk4ZixNABKp*NlI9mkck22ZFOQYLHoE4!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=AAWKAgAFigIRADc!&tl=1&tm=1553954400&sce=0-12-12&rf=viewer_311">
+        <img height="580px" width="100%" src="../assets/car1.jpg">
       </div>
     </CarouselItem>
     <CarouselItem>
       <div class="wrapper">
-        <img height="580px" width="100%" src="http://a4.qpic.cn/psb?/V10GZ44l3v5uHj/dRhceo0Sb*9xnz3ggdkdfzBxCNPSYMWM8yyQzFXpNPs!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=AAWgAgAFoAIRADc!&tl=1&vuin=675546066&tm=1553954400&sce=50-1-1&rf=viewer_311">
+        <img height="580px" width="100%" src="../assets/car6.jpg">
       </div>
     </CarouselItem>
     <CarouselItem>
       <div class="wrapper">
-        <img height="580px" width="100%" src="http://a4.qpic.cn/psb?/V10GZ44l3v5uHj/uwO1Kebj*xghFFt7R0zJEmY8w8OMWSwF*PlIG*pppuE!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=AAVWAwAFVgMRADc!&tl=1&vuin=675546066&tm=1553954400&sce=50-1-1&rf=viewer_311">
+        <img height="580px" width="100%" src="../assets/car7.jpg">
       </div>
     </CarouselItem>
   </Carousel>
