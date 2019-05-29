@@ -1,26 +1,40 @@
-# demo
+#系统使用说明
 
-抓取数据&可视化&分析
-
-
+##大数据技术与实践-电商数据分析系统
 
 
-> A Vue.js project
+###数据获取
+1. 本地安装[python环境](https://www.python.org/)
 
-## Build Setup
+2. 解压文件，切换到项目路径之下,执行代码`python + 项目工作路径`即可执行
 
-``` bash
-# install dependencies
-npm install
+3. 运行成功后可生成数据文件
 
-# serve with hot reload at localhost:8080
-npm run dev
+###前端搭建
 
-# build for production with minification
-npm run build
+1.	本地安装[node.js](https://nodejs.org/en/download/)
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+2.	本地安装[npm包管理工具](https://www.npmjs.com/)
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+3.	解压文件untitled3，切换到项目路径之下，命令行执行代码 `npm install`下载更新项目所需要的包
+
+4.	执行`npm run dev`启动项目
+
+5.	Chorme浏览器或FireFox浏览器打开，地址栏输入[http://localhost:8080](http://localhost:8080)即可访问（不建议使用IE浏览器）
+
+
+###后端搭建
+
+1. 本地安装[Golang语言环境](https://golang.org/dl/).
+
+2. 解压文件awesomeProject，切换到项目路径之下，命令行执行代码`go build main.go`启动项目.
+
+3. 成功后可看到控制台打印服务运行信息
+
+###数据分析
+
+1. 本地安装[python环境](https://www.python.org/)
+
+2. 解压文件Statistic，切换到项目路径之下,执行代码`python + 项目工作路径`即可执行
+
+
