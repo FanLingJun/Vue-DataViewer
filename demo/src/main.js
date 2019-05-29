@@ -12,16 +12,13 @@ import 'echarts/theme/dark.js'
 import 'echarts/theme/vintage.js'
 import 'echarts/theme/macarons.js'
 import 'echarts/theme/infographic.js'
-
 import VueRouter from 'vue-router'
 import woldCloud from 'echarts-wordcloud'
-
 
 Vue.use(echarts)
 Vue.use(iView)
 Vue.use(VueRouter)
 Vue.use(woldCloud)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

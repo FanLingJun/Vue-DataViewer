@@ -39,7 +39,6 @@
 <script>
 
   let echarts = require('echarts');
-
   export default{
     name: "index",
     data() {
