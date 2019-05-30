@@ -56,6 +56,7 @@
                 this.array[i][0] = json[i].price;
                 this.array[i][1] = json[i].power;
                 this.array[i][2] = json[i].name;
+                //console.log(this.array[i][0] + this.array[i][1] + this.array[i][2])
               }
             }
 
@@ -70,8 +71,7 @@
               }
             }
 
-            //console.log(this.array);
-            //console.log(this.array[i][2]);
+
             Chart.setOption({
 
                 title: {
@@ -100,11 +100,13 @@
                   formatter: '{c}'
                 },
                 xAxis: [{
+                  name: '价格',
                   type: 'value',
                   max: 150
 
                 }],
                 yAxis: [{
+                  name: '马力',
                   type: 'value',
                   max: 140
                 }],
@@ -112,51 +114,8 @@
                   name: 'price-area',
                   type: 'scatter',
                   symbolSize: 5,
-                  // itemStyle: {
-                  //     normal: {
-                  //         borderWidth: 0.2,
-                  //         borderColor: '#fff'
-                  //     }
-                  // },
                   data: this.array
                 }]
-
-
-
-
-
-
-/*                title: {
-                  text: '',
-                },
-                tooltip: {
-                  formatter: '{c}'
-                },
-                xAxis: {
-                  name:'价格(万元)',
-                  nameTextStyle: {
-                    fontSize: 18
-                  },
-                  scale: true
-                },
-                yAxis: {
-                  name: '最大马力(ps)',
-                  nameTextStyle: {
-                    fontSize: 18
-                  },
-                  scale: true
-                },
-                series: [{
-                  type: 'effectScatter',
-                  symbolSize: 10,
-                  /!*data: [
-                    [160, 40],
-                    [190, 80]
-                  ],*!/
-                }, {
-                  type: 'scatter',
-                  data: this.array,
-                }]*/
           }),
 
             Chart_2.setOption({
@@ -186,11 +145,13 @@
                   formatter: '{c}'
                 },
                 xAxis: [{
+                  name: '价格',
                   type: 'value',
                   max: 150
 
                 }],
                 yAxis: [{
+                  name: '马力',
                   type: 'value',
                   max: 140
                 }],
@@ -198,12 +159,6 @@
                   name: 'price-area',
                   type: 'scatter',
                   symbolSize: 5,
-                  // itemStyle: {
-                  //     normal: {
-                  //         borderWidth: 0.2,
-                  //         borderColor: '#fff'
-                  //     }
-                  // },
                   data: this.array_2
                 }]
               })

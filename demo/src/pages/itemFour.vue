@@ -83,15 +83,16 @@
               yAxis: [
                 {
                   type : 'value',
-                  name : '比值',
-                  axisLabel: {
+                  name : '数值',
+                  /*axisLabel: {
                     formatter: function (a) {
                       a = +a;
                       return isFinite(a)
                         ? echarts.format.addCommas(+a / 1000)
                         : '';
                     }
-                  }
+                  }*/
+
                 }
               ],
               dataZoom: [

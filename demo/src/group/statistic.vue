@@ -6,34 +6,22 @@
           <div class="layout-logo"></div>
           <div class="layout-nav">
             <MenuItem name="itemOne">
-              <Icon type="ios-car-outline" />
-              汽&nbsp;
-              <Icon type="ios-car-outline" />
+              功率&整备质量分布
             </MenuItem>
             <MenuItem name="itemTwo">
-              <Icon type="ios-car-outline" />
-              车&nbsp;
-              <Icon type="ios-car-outline" />
+              排量&价格分布
             </MenuItem>
             <MenuItem name="itemThree">
-              <Icon type="ios-car-outline" />
-              数&nbsp;
-              <Icon type="ios-car-outline" />
+              价格&马力分布
             </MenuItem>
             <MenuItem name="itemFour">
-              <Icon type="ios-car-outline" />
-              据&nbsp;
-              <Icon type="ios-car-outline" />
+              速度&马力分布
             </MenuItem>
             <MenuItem name="datastatistic">
-              <Icon type="ios-car-outline" />
-              分&nbsp;
-              <Icon type="ios-car-outline" />
+              区间分布图
             </MenuItem>
             <MenuItem name="itemSix">
-              <Icon type="ios-car-outline" />
-              析&nbsp;
-              <Icon type="ios-car-outline" />
+              查询销量
             </MenuItem>
           </div>
         </Menu>
@@ -85,7 +73,7 @@
     left: 20px;
   }
   .layout-nav{
-    width: 640px;
+    width: 800px;
     margin: 0 auto;
     /*margin-right: 10px;*/
     font-size: 80px;
